@@ -1,0 +1,30 @@
+// VB anonymous delegates re-declared; signatures taken from assembly IL Invoke methods
+namespace PCL;
+
+internal delegate TResult VB_0024AnonymousDelegate_0<TResult>();
+internal delegate TResult VB_0024AnonymousDelegate_1<TArg0, TResult>(TArg0 Data);
+internal delegate TResult VB_0024AnonymousDelegate_2<TArg0, TArg1, TResult>(TArg0 Result, TArg1 Source);
+internal delegate TResult VB_0024AnonymousDelegate_3<TArg0, TResult>(TArg0 Source);
+internal delegate TResult VB_0024AnonymousDelegate_4<TArg0, TResult>(TArg0 Project);
+internal delegate void VB_0024AnonymousDelegate_5<TArg0>(TArg0 Constraint);
+internal delegate void VB_0024AnonymousDelegate_6<TArg0, TArg1>(TArg0 d, TArg1 e);
+internal delegate void VB_0024AnonymousDelegate_7<TArg0, TArg1>(TArg0 t, TArg1 e);
+internal delegate void VB_0024AnonymousDelegate_8<TArg0, TArg1>(TArg0 sender, TArg1 e);
+internal delegate TResult VB_0024AnonymousDelegate_9<TArg0, TResult>(TArg0 LogText);
+internal delegate void VB_0024AnonymousDelegate_10();
+internal delegate TResult VB_0024AnonymousDelegate_11<TArg0, TResult>(TArg0 Reason);
+internal delegate TResult VB_0024AnonymousDelegate_12<TArg0, TResult>(TArg0 Name);
+internal delegate void VB_0024AnonymousDelegate_13<TArg0, TArg1, TArg2>(TArg0 sender, TArg1 e, TArg2 Handle);
+internal delegate TResult VB_0024AnonymousDelegate_14<TArg0, TResult>(TArg0 Folder);
+internal delegate TResult VB_0024AnonymousDelegate_15<TArg0, TResult>(TArg0 TargetOption);
+internal delegate void VB_0024AnonymousDelegate_16<TArg0, TArg1>(TArg0 ss, TArg1 ee);
+internal delegate void VB_0024AnonymousDelegate_17<TArg0>(TArg0 Id);
+internal delegate void VB_0024AnonymousDelegate_18<TArg0>(TArg0 a);
+internal delegate TResult VB_0024AnonymousDelegate_19<TArg0, TResult>(TArg0 Json);
+internal delegate TResult VB_0024AnonymousDelegate_20<TArg0, TResult>(TArg0 Key);
+internal delegate TResult VB_0024AnonymousDelegate_21<TArg0, TResult>(TArg0 Instance);
+internal delegate TResult VB_0024AnonymousDelegate_22<TArg0, TResult>(TArg0 j);
+internal delegate TResult VB_0024AnonymousDelegate_23<TArg0, TResult>(TArg0 Token);
+internal delegate void VB_0024AnonymousDelegate_24<TArg0>(TArg0 Value);
+internal delegate TResult VB_0024AnonymousDelegate_25<TArg0, TResult>(TArg0 v);
+internal delegate TResult VB_0024AnonymousDelegate_26<TArg0, TResult>(TArg0 Value);

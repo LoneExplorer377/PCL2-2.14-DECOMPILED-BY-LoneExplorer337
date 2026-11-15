@@ -17,9 +17,9 @@ dotnet build -c Release
 | 目标框架 | .NET Framework 4.8（`net48`，WPF + WinForms，`LangVersion 14.0`） |
 | 构建环境 | Windows + .NET SDK（实测 11.0.100-rc.1）；NuGet 需要能拉到 `Microsoft.NETFramework.ReferenceAssemblies 1.0.3`（本机未装 4.8 引用程序集时靠它） |
 | 依赖 | `src/libs/` 内 18 个 DLL（上游程序内嵌的第三方库，已随仓库提供，无需另下） |
-| 实测结果 | **0 个错误 / 256 个警告 / 57 秒** |
-| 产物 | `src/bin/Release/net48/Plain Craft Launcher 2.exe`（5,974,528 字节）+ 13 个托管 DLL + `.exe.config` |
-| 运行 | 单机实测可正常启动、主窗体显示、无 E 级日志错误 |
+| 实测结果 | **0 个错误 / 256 个警告 / 44 秒**（单文件配置） |
+| 产物 | `src/bin/Release/net48/Plain Craft Launcher 2.exe`（5,974,528 字节，**单文件**：13 个依赖库已内嵌为资源，运行时由 `AppDomain.AssemblyResolve` 从 `PCL.Resources` 直接加载）；输出目录只剩 exe + `.exe.config` + `.pdb` |
+| 运行 | 单文件实测：启动 ALIVE、日志 68 行、**0 条 E 级错误、0 条「无法加载文件或程序集」** |
 
 ## 相对原始反编译输出做了什么
 
@@ -63,7 +63,7 @@ dotnet build -c Release
 ## 已知限制
 
 - 源码来自反编译，变量名/控制流与原作者实际代码不完全一致（ILSpy 输出，非官方源码）。
-- 本版本仍为多文件输出（exe + 13 个 DLL）；后续版本改为把库内嵌进 exe 的单文件形式。
+- 编译期仍以 `src/libs/` 里 18 个 DLL 作为引用，但 csproj 中 13 个引用均已设 `<Private>false</Private>`，输出目录不再复制它们（单文件运行）。`.exe.config` 可选，只放 .NET 4.8 声明与 Newtonsoft 绑定重定向。
 - 未包含原始 exe、图标以外的二进制资源与上游作者的构建脚本。
 
 ## 免责声明
